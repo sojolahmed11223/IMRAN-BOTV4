@@ -1,7 +1,7 @@
 {
   "version": "1.0.4",
   "files": [
-    "scripts/commands/audl.js"
+    "scripts/commands/song.js"
   ],
   "reinstallDependencies": true
 }
