@@ -41,9 +41,9 @@ module.exports.run = async ({ api, event, args }) => {
     const downloading = await api.sendMessage(`🎬 Found: ${video.title}\n⬇️ Downloading now...`, event.threadID);
     loadingMsgID = downloading.messageID;
 
-    // Step 4: Get downloadable URL
-    const dlRes = await axios.get(`https://kaiz-apis.gleeze.com/api/ytmp4?url=${video.url}&quality=360&apikey=6c9542b5-7070-48cb-b325-80e1ba65a451`);
-    const downloadUrl = dlRes.data.download_url;
+    // Step 4: Get downloadable URL 
+    const dlRes = await axios.get(`https://yt-api-imran.vercel.app/api?url=${video.url}`);
+    const downloadUrl = dlRes.data.downloadUrl;
     if (!downloadUrl) throw new Error("No download link received.");
 
     // Step 5: Prepare file
