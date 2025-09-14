@@ -59,10 +59,10 @@ module.exports.run = async ({ api, event, args }) => {
 
     // ✅ Download API ব্যবহার
     const downloadResponse = await axios.get(
-      `https://nayan-video-downloader.vercel.app/ytdown?url=${encodeURIComponent(ytUrl)}`
+      `https://yt-mp3-imran.vercel.app/api?url=${encodeURIComponent(ytUrl)}`
     );
 
-    const audioUrl = downloadResponse.data?.data?.audio;
+    const audioUrl = downloadResponse.data.downloadUrl;
     if (!audioUrl) {
       return api.sendMessage(
         "⚠️ Failed to fetch download link. Try again.",
